@@ -9,11 +9,11 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Georgia', serif;
         }
 
         body {
-            background: linear-gradient(135deg, #ff0844, #ffb199);
+            background: linear-gradient(120deg, #2c3e50, #3498db);
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -24,57 +24,61 @@
 
         .container {
             text-align: center;
-            padding: 20px;
-            max-width: 800px;
+            padding: 30px;
+            max-width: 700px;
             width: 100%;
-            animation: fadeIn 2s ease-in-out;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         h1 {
-            font-size: 3.5rem;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-            color: #ffd700;
-            animation: bounceIn 1.5s ease;
+            font-size: 3rem;
+            color: #ecf0f1;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            animation: slideDown 1s ease;
         }
 
         h2 {
-            font-size: 2rem;
-            margin: 10px 0;
-            color: #fff;
-            animation: slideIn 2s ease;
+            font-size: 1.8rem;
+            margin: 15px 0;
+            color: #bdc3c7;
+            animation: fadeIn 2s ease;
         }
 
         p {
             font-size: 1.2rem;
-            margin: 20px 0;
             line-height: 1.6;
-            animation: fadeIn 3s ease;
+            margin: 20px 0;
+            color: #ecf0f1;
+            animation: fadeIn 2.5s ease;
         }
 
-        .marvel-btn {
+        .btn {
             display: inline-block;
-            padding: 15px 30px;
-            background: #ff0844;
+            padding: 12px 25px;
+            background: #e74c3c;
             color: #fff;
             text-decoration: none;
-            font-size: 1.5rem;
-            border-radius: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
+            font-size: 1.2rem;
+            border-radius: 20px;
+            transition: background 0.3s, transform 0.3s;
         }
 
-        .marvel-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        .btn:hover {
+            background: #c0392b;
+            transform: translateY(-3px);
         }
 
-        .confetti {
+        .particle {
             position: absolute;
-            width: 10px;
-            height: 10px;
-            background: #ffd700;
+            width: 8px;
+            height: 8px;
+            background: #fff;
             border-radius: 50%;
-            animation: fall 5s infinite;
+            opacity: 0.7;
+            animation: drift 6s infinite;
         }
 
         @keyframes fadeIn {
@@ -82,64 +86,57 @@
             to { opacity: 1; }
         }
 
-        @keyframes bounceIn {
-            0% { transform: scale(0); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
-        }
-
-        @keyframes slideIn {
-            from { transform: translateY(50px); opacity: 0; }
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
 
-        @keyframes fall {
-            0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        @keyframes drift {
+            0% { transform: translateY(-100vh) translateX(0); opacity: 0.7; }
+            100% { transform: translateY(100vh) translateX(20px); opacity: 0; }
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
+            h1 { font-size: 2.2rem; }
             h2 { font-size: 1.5rem; }
             p { font-size: 1rem; }
-            .marvel-btn { font-size: 1.2rem; padding: 10px 20px; }
+            .btn { font-size: 1rem; padding: 10px 20px; }
         }
 
         @media (max-width: 480px) {
-            h1 { font-size: 2rem; }
+            h1 { font-size: 1.8rem; }
             h2 { font-size: 1.2rem; }
             p { font-size: 0.9rem; }
-            .marvel-btn { font-size: 1rem; padding: 8px 15px; }
+            .btn { font-size: 0.9rem; padding: 8px 15px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Happy 28th Birthday, Sreejesh!</h1>
-        <h2>To My Superhero, Sreekuttan</h2>
-        <p>Wishing you a marvelous day filled with love, joy, and epic adventures! You’re my real-life hero, stronger than Iron Man, wiser than Doctor Strange, and cooler than Spider-Man. Let’s make this birthday as legendary as the Marvel Universe!</p>
-        <a href="#" class="marvel-btn">Celebrate Like a Hero!</a>
+        <h2>To My Dearest Sreekuttan</h2>
+        <p>Wishing you a day filled with happiness, love, and all the things that make you smile. You’re 28 today, and I’m so grateful to celebrate you—my rock, my joy, and my everything. Here’s to a year ahead full of beautiful moments!</p>
+        <a href="#" class="btn">Cheers to You!</a>
     </div>
 
     <script>
-        // Confetti Animation
-        function createConfetti() {
-            const confetti = document.createElement('div');
-            confetti.classList.add('confetti');
-            confetti.style.left = Math.random() * 100 + 'vw';
-            confetti.style.background = ['#ffd700', '#ff0844', '#00ffcc', '#00b7ff'][Math.floor(Math.random() * 4)];
-            confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
-            document.body.appendChild(confetti);
+        // Particle Animation
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.animationDuration = Math.random() * 4 + 2 + 's';
+            document.body.appendChild(particle);
 
-            setTimeout(() => confetti.remove(), 5000);
+            setTimeout(() => particle.remove(), 6000);
         }
 
-        setInterval(createConfetti, 200);
+        setInterval(createParticle, 300);
 
         // Button Click Alert (optional)
-        document.querySelector('.marvel-btn').addEventListener('click', () => {
-            alert('Happy Birthday, Sreekuttan! Let’s make it an epic day!');
+        document.querySelector('.btn').addEventListener('click', () => {
+            alert('Happy Birthday, Sreekuttan! Love you tons!');
         });
     </script>
 </body>
