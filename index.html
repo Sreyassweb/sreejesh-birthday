@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 28th Birthday, Sreejesh!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ff0844, #ffb199);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: #fff;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            max-width: 800px;
+            width: 100%;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            color: #ffd700;
+            animation: bounceIn 1.5s ease;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin: 10px 0;
+            color: #fff;
+            animation: slideIn 2s ease;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+            line-height: 1.6;
+            animation: fadeIn 3s ease;
+        }
+
+        .marvel-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #ff0844;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5rem;
+            border-radius: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .marvel-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ffd700;
+            border-radius: 50%;
+            animation: fall 5s infinite;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 1.5rem; }
+            p { font-size: 1rem; }
+            .marvel-btn { font-size: 1.2rem; padding: 10px 20px; }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.2rem; }
+            p { font-size: 0.9rem; }
+            .marvel-btn { font-size: 1rem; padding: 8px 15px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy 28th Birthday, Sreejesh!</h1>
+        <h2>To My Superhero, Sreekuttan</h2>
+        <p>Wishing you a marvelous day filled with love, joy, and epic adventures! You’re my real-life hero, stronger than Iron Man, wiser than Doctor Strange, and cooler than Spider-Man. Let’s make this birthday as legendary as the Marvel Universe!</p>
+        <a href="#" class="marvel-btn">Celebrate Like a Hero!</a>
+    </div>
+
+    <script>
+        // Confetti Animation
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.background = ['#ffd700', '#ff0844', '#00ffcc', '#00b7ff'][Math.floor(Math.random() * 4)];
+            confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(confetti);
+
+            setTimeout(() => confetti.remove(), 5000);
+        }
+
+        setInterval(createConfetti, 200);
+
+        // Button Click Alert (optional)
+        document.querySelector('.marvel-btn').addEventListener('click', () => {
+            alert('Happy Birthday, Sreekuttan! Let’s make it an epic day!');
+        });
+    </script>
+</body>
+</html>
